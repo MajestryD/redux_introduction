@@ -7,7 +7,7 @@ export function forbiddenNamesMiddleware({dispatch}){
     return function(action){
       if(action.type === ADD_USER){
        const foundWord = forbiddenName.filter(word => action.payload.name.includes(word));
-      
+
 
         if(foundWord.length){
           return dispatch({type: "FOUND_BAD_WORD"});
